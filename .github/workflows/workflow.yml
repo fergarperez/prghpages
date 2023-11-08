@@ -1,6 +1,6 @@
 name: despliega a Azure
 
-on: [workflow_dispatch]
+on: [workflow_dispatch, push]
 
 jobs:
   prueba:
@@ -22,4 +22,4 @@ jobs:
         KEY: ${{ secrets.SSHKEY }}
       with:
         source: "index.html"
-        target: "/home/jorloque/webs"
+        target: "/home/fergarper/webs"

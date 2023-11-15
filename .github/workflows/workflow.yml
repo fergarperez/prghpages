@@ -12,14 +12,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
     - name: copy file via ssh password
       uses: appleboy/scp-action@v0.1.4
       env:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
-        KEY: ${{ secrets.SSHKEY }}
+        KEY: ${{ secrets.KEY }}
       with:
         source: "index.html"
         target: "/home/fergarper/webs"
